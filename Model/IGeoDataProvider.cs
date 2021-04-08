@@ -8,6 +8,6 @@ namespace GeoServices.Model
 {
   interface IGeoDataProvider
   {
-    Task<string> GetGeoData(string query, int rareFactor);
+    Task<string> GetGeoData(string query, float simplificationFactor);
   }
 }

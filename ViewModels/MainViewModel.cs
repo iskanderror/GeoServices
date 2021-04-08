@@ -16,6 +16,7 @@ namespace GeoServices.ViewModels
     private string _searchString;
     private string _logString;
     private string _geoData;
+    private float _simplificationFactor;
 
     private static IGeoDataProvider _geoDataProvider;
 
@@ -23,6 +24,7 @@ namespace GeoServices.ViewModels
 
     #region Properties
     public string SearchString { get => _searchString; set => SetProperty(ref _searchString, value); }
+    public float SimplificationFactor { get => _simplificationFactor; set => SetProperty(ref _simplificationFactor, value); }
     public string LogString { get => _logString; set => SetProperty(ref _logString, value); }
     public string GeoData { get => _geoData; set => SetProperty(ref _geoData, value); }
     public bool IsGettingData
@@ -56,7 +58,7 @@ namespace GeoServices.ViewModels
       {
         IsGettingData = true;
         Log(String.Format("Requesting data for [{0}]",SearchString));
-        GeoData = await _geoDataProvider.GetGeoData(SearchString, 0);
+        GeoData = await _geoDataProvider.GetGeoData(SearchString, SimplificationFactor);
         Log(String.Format("Receiving data for [{0}]", SearchString));
       }
       finally

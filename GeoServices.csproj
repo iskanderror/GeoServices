@@ -74,6 +74,8 @@
     <Compile Include="Classes\TaskUtilities.cs" />
     <Compile Include="Model\IGeoDataProvider.cs" />
     <Compile Include="Model\OsmDataProvider.cs" />
+    <Compile Include="ViewItems\ExtensionMethods.cs" />
+    <Compile Include="ViewItems\FloatingPointTextBox.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
