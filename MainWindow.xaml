@@ -15,6 +15,7 @@
         <RowDefinition Height="40"></RowDefinition>
         <RowDefinition Height="40"></RowDefinition>
         <RowDefinition Height="*" MinHeight="50"></RowDefinition>
+        <RowDefinition Height="*" MinHeight="50" MaxHeight="200"></RowDefinition>
       </Grid.RowDefinitions>
       <Grid.ColumnDefinitions>
         <ColumnDefinition Width="Auto" MinWidth="100"></ColumnDefinition>
@@ -24,9 +25,9 @@
       </Grid.ColumnDefinitions>
       <Label Grid.Row="0" Grid.Column="0" FontSize="16" FontWeight="Bold" Content='Строка для поиска' Margin="5" HorizontalAlignment="Left" VerticalAlignment="Center"/>
       <TextBox Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" TextWrapping="NoWrap" Margin="5" VerticalContentAlignment="Center" MaxLines="1" Text="{Binding SearchString, UpdateSourceTrigger=PropertyChanged, ValidatesOnDataErrors=True}"/>
-      <Button Content="Найти" Grid.Row="0" Grid.Column="3" FontSize="16" FontWeight="Bold" Margin="5" Command="{Binding LoadDataCommand}"/>
+      <Button Content="Найти" Grid.Row="0" Grid.Column="3" FontSize="16" FontWeight="Bold" Margin="5" Command="{Binding LoadDataCommand}" IsDefault="True" />
       <Button Content="Сохранить в файл" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="4" Margin="5" FontSize="16" FontWeight="Bold" Command="{Binding SaveFileCommand}"/>
       <TextBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Margin="5" IsReadOnly="True" VerticalScrollBarVisibility="Auto" Text="{Binding GeoData, UpdateSourceTrigger=PropertyChanged}"/>
-      <TextBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="4" Margin="5" IsReadOnly="True" VerticalScrollBarVisibility="Auto" Text="{Binding LogString, UpdateSourceTrigger=PropertyChanged}"/>
+      <TextBox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="4" Margin="5" IsReadOnly="True" VerticalScrollBarVisibility="Auto" Text="{Binding LogString, UpdateSourceTrigger=PropertyChanged}"/>
   </Grid>
 </Window>
